@@ -1,0 +1,209 @@
+<div class="layout-page">
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+      <!-- Menu -->
+      
+      <!-- / Menu -->
+
+      <div class="container-xxl flex-grow-1 container-p-y" id="width-value"> 
+        <!-- <div class="app-ecommerce">  -->
+          <div class="row">
+            <!-- Basic Layout -->
+            <div class="col-xxl">
+              <!-- <div class="card mb-4"> -->
+                <!-- <div class="card-body"> -->
+                  <!-- <div class="d-flex justify-content-between align-items-center mb-4"> -->
+                   
+                  
+                  </div> <div class="card">
+          <div class="card-body">
+            <!-- Breadcrumb and Title -->
+            <div class="d-flex justify-content-between align-items-center mb-4"> 
+              <div> 
+                <ol class="breadcrumb custom-breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">BankCashPro</a></li>
+                  <li class="breadcrumb-item"><a href="#">Cashflow Forecasting</a></li>
+                  <li class="breadcrumb-item"><a href="#">Transaction</a></li>
+                  <li class="breadcrumb-item active bold-f-b" aria-current="page"><a href="javascript:void(0)">Listing Page</a></li> 
+                </ol>
+              </div>
+              <div class="button-group" style="margin-top: -22px;">
+                <button
+                  type="button"
+                  class="btn btn-primary waves-effect waves-light"
+                  [routerLink]="['/manual-four']"                >
+                  <span class="tf-icons mdi mdi-plus-box-outline me-1"></span
+                  >Initiate
+                </button>
+                <button class="btn btn-secondary" onclick="window.location.href='Review-List.html';">
+                  Review
+                </button>
+                <button class="btn btn-warning" (click)="pendingBtnApi()">
+                  Pending
+                </button>
+                <button
+                class="btn btn-danger waves-effect waves-light"
+                (click)="handleButtonClick()"
+              >
+              <!-- {{ showAdditionalColumns }} -->
+                Rejected
+              </button>
+              </div>
+            </div>
+
+
+            <!-- Search and Filter -->
+            <div class="row mb-3" >
+              <div class="col-md-6">
+                <div class="input-group">
+                  <select class="form-select" aria-label="Search By">
+                    <option selected>Reference No</option>
+                    <option value="1">Corporate Code</option>
+                    <option value="2">Corporate Name</option>
+                    <option value="3">Forecasting As</option>
+                    <option value="4">Entry Type</option>
+                    <!-- Add other search options as needed -->
+                  </select>
+                  <input type="text" class="search-value" placeholder="Enter Search Value"
+                    aria-label="Search Value">
+                  <button class="btn btn-primary" (click)="search()"  type="button">
+                    <i class="mdi mdi-magnify"></i> Search
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-between align-items-center mb-3"style="margin-top: 4px;">
+              <span>0 Transactions Selected</span>
+              <div>
+                <button class="btn rounded-pill btn-label-primary me-2">Authorize All</button>
+                <button class="btn rounded-pill btn-label-secondary">Reject All</button>
+              </div>
+              
+            </div>
+
+            <!-- Data Table -->
+            <div class="table-responsive">
+              <table
+                class="table table-bordered table-striped"
+                id="listingTable"
+              >
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">
+                      <input class="form-check-input" type="checkbox" />
+                    </th>
+                    <th scope="col">Reference No</th>
+                    <th scope="col">Corporate Code</th>
+                    <th scope="col">Corporate Name</th>
+                    <th scope="col">Forecasting As</th>
+                    <th scope="col">Entry Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Account No</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Currency</th>
+                    <th scope="col">Recurrence Pattern</th>
+                    <th scope="col" *ngIf="showAdditionalColumns">Rejection Reason</th>
+                    <th scope="col" *ngIf="showAdditionalColumns">Status</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let result of results">
+                    <td>
+                      <input class="form-check-input" type="checkbox" />
+                    </td>
+                    <td>{{ result.referenceNumber }}</td>
+                    <td>{{ result.corporateCode }}</td>
+                    <td>{{ result.corporateName }}</td>
+                    <td>{{ result.forecastingAs }}</td>
+                    <td>{{ result.entryType }}</td>
+                    <td>{{ result.description }}</td>
+                    <td>{{ result.accountNo }}</td>
+                    <td>{{ result.forecastedAmount }}</td>
+                    <td>{{ result.currency }}</td>
+                    <td>{{ result.recurrencePattern }}</td>
+                    <!--  FOR REJECTED ME-->
+                    <td *ngIf="showAdditionalColumns">{{ result.status }}</td>
+                    <td *ngIf="showAdditionalColumns">{{ result.rejectionReason }}</td>
+                    <td>
+                      <button class="btn btn-outline-primary waves-effect">
+                        <i class="mdi mdi-eye"></i>
+                      </button>
+                      <button class="btn btn-outline-warning waves-effect">
+                        <i class="mdi mdi-pencil-box-multiple-outline"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span>1 of 1</span>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ Content -->
+
+            
+      <!-- Footer -->
+      <!-- <footer class="content-footer footer bg-footer-theme">
+        <div class="container-xxl">
+          <div
+            class="footer-container d-flex align-items-center justify-content-between py-3 flex-md-row flex-column">
+            <div class="mb-2 mb-md-0">
+              ©
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              , powered <span class="text-danger"></i></span> by
+              <a href="javascript:void(0)"  class="footer-link fw-medium">ariantechsolutions</a>
+            </div>
+            <div class="d-none d-lg-inline-block">
+              <a href="javascript:void(0)" class="footer-link me-4"
+                >License</a
+              >
+            
+
+              <a
+                href="javascript:void(0)"
+                class="footer-link me-4"
+                >Documentation</a
+              >
+
+              <a href="javascript:void(0)"  class="footer-link d-none d-sm-inline-block"
+                >Support</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer> -->
+      <!-- / Footer -->
+
+        <div class="content-backdrop fade"></div>
+      </div>
+      <!--/ Content wrapper -->
+    </div>
+
+    <!--/ Layout container -->
+  </div>
