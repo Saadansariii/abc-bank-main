@@ -1,172 +1,290 @@
-<div class="container-xxl flex-grow-1 container-p-y"> 
-    <div class="app-ecommerce"> 
-      <div class="row">
-        <!-- Basic Layout -->
-        <div class="col-xxl">
-          <div class="card mb-4">
-            <div class="card-body"> 
-         
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <div> 
-                  <ol class="breadcrumb custom-breadcrumb"style="margin-bottom: -25px;">
-                    <li class="breadcrumb-item"><a href="#">BankCashPro</a></li>
-                    <li class="breadcrumb-item"><a href="#">Cashflow Forecasting</a></li>
-                    <li class="breadcrumb-item"><a href="#">Transaction</a></li>
-                    <li class="breadcrumb-item active bold-f-b" aria-current="page"><a href="javascript:void(0)">Summary</a></li> 
-                  </ol>
-                </div>  
-              </div>  
-             
-              <div class="container-xxl ">
-                <h2 style="
-                padding-top: 20px;
-            ">Cashflow Forecast-summary</h2>
-                <div class="container-box-wrapper">
-                  <div class="row gy-4 mb-4 d-flex container-box">
-                    <section class="col-xl-3 col-md-5 col-sm-6 d-flex align-items-stretch">
-                      <div class="company-info d-flex flex-column justify-content-between">
-                        <div>
-                          <!-- Currency Selector -->
-                          <div class="currency-select d-flex align-items-center mb-3">
-                            <img src="assets/img/download (1).png" alt="Country Flag" class="country-flag me-2" />
-                            <select>
-                              <option value="AED">AED</option>
-                              <option value="USD">USD</option>
-                              <option value="EUR">EUR</option>
-                              <!-- Add more currencies as needed -->
-                            </select>
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="app-ecommerce">
+    <div class="row">
+      <!-- Basic Layout -->
+      <div class="col-xxl">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div>
+                <ol
+                  class="breadcrumb custom-breadcrumb"
+                  style="margin-bottom: -25px"
+                >
+                  <li class="breadcrumb-item"><a href="#">BankCashPro</a></li>
+                  <li class="breadcrumb-item">
+                    <a href="#">Cashflow Forecasting</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#">Transaction</a></li>
+                  <li
+                    class="breadcrumb-item active bold-f-b"
+                    aria-current="page"
+                  >
+                    <a href="javascript:void(0)">Summary</a>
+                  </li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="container-xxl">
+              
+              <h2 style="padding-top: 20px">Cashflow Forecast-summary</h2>
+              <div class="container-box-wrapper"  >
+                <div class="row gy-4 mb-4 d-flex container-box" >
+                 
+                  <section
+                    class="col-xl-3 col-md-5 col-sm-6 d-flex align-items-stretch"
+                    id="cashflow"
+                  >
+                    <div
+                      class="company-info d-flex flex-column justify-content-between"
+                    >
+                      <div>
+                        <!-- Currency Selector -->
+                        <div
+                          class="currency-select d-flex align-items-center mb-3"
+                        >
+                          <img
+                            src="assets/img/download (1).png"
+                            alt="Country Flag"
+                            class="country-flag me-2"
+                          />
+                          <select>
+                            <option value="AED">AED</option>
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <!-- Add more currencies as needed -->
+                          </select>
+                        </div>
+
+                        <!-- Company Name -->
+                        <h2>Nescafe</h2>
+                        <hr class="thin-line" />
+
+                        <!-- CIF ID and Accounts (Two columns) -->
+                        <div class="cif-accounts row">
+                          <!-- CIF ID Column -->
+                          <div class="col-6">
+                            <p class="id-number">10003434</p>
+                            <p
+                              class="cif-id mb-1"
+                              style="color: black; font-weight: bold"
+                            >
+                              CIF ID
+                            </p>
                           </div>
-                    
-                          <!-- Company Name -->
-                          <h2>Nescafe</h2>
-                          <hr class="thin-line" />
-                    
-                          <!-- CIF ID and Accounts (Two columns) -->
-                          <div class="cif-accounts row">
-                            <!-- CIF ID Column -->
-                            <div class="col-6">
-                              <p class="id-number">10003434</p>
-                              <p class="cif-id mb-1" style="color: black; font-weight: bold;">CIF ID</p>
-                              
-                            </div>
-                            <!-- Accounts Column -->
-                            <div class="col-6">
-                              <p class="account-number">9</p>
-                              <p class="accounts mb-1" style="color: black; font-weight: bold;">Accounts</p>
-                             
-                            </div>
+                          <!-- Accounts Column -->
+                          <div class="col-6">
+                            <p class="account-number">9</p>
+                            <p
+                              class="accounts mb-1"
+                              style="color: black; font-weight: bold"
+                            >
+                              Accounts
+                            </p>
                           </div>
                         </div>
                       </div>
-                    </section>
-                    
-                  
+                    </div>
+                  </section>
 
-              <!-- Cashflow Overview Card -->
-<div class="col-xl-2 col-md-3 col-sm-6 d-flex align-items-stretch">
-<div class="card-container d-flex flex-column justify-content-between">
-<div class="card-body d-flex flex-column justify-content-between">
-<div class="card-info ">
-    <!-- Changed h5 to h6 -->
-    <h6 style="font-weight: bold;">AED 10,600</h6>
+                  <!-- Cashflow Overview Card -->
+                  <div
+                    class="col-xl-2 col-md-3 col-sm-6 d-flex align-items-stretch"
+                  >
+                    <div
+                      class="card-container d-flex flex-column justify-content-between"
+                    >
+                      <div
+                        class="card-body d-flex flex-column justify-content-between"
+                      >
+                        <div class="card-info">
+                          <!-- Changed h5 to h6 -->
+                          <h6 style="font-weight: bold">AED 10,600</h6>
 
-    <p>Total Cash Inflow</p>
-    <div class="badge bg-label-secondary rounded-pill">Last 4 Months</div>
-</div>
-</div>
-</div>
-</div>
-
-              
-                      <!-- Cash Outflow Card -->
-                      <div class="col-xl-2 col-md-3 col-sm-6 d-flex align-items-stretch">
-                          <div class="card-container d-flex flex-column justify-content-between">
-                              <div class="card-body d-flex flex-column justify-content-between">
-                                  <div class="card-info ">
-                                    <h6 style="font-weight: bold;">AED 22,500</h6>
-                                      <!-- <h5>AED 22,500</h5> -->
-                                      <p>Total Cash Outflow</p>
-                                      <div class="badge bg-label-secondary rounded-pill">Last 4 Months</div>
-                                  </div>
-                              </div>
+                          <p>Total Cash Inflow</p>
+                          <div class="badge bg-label-secondary rounded-pill">
+                            Last 4 Months
                           </div>
+                        </div>
                       </div>
-              
-                      <!-- Net Cashflow Card -->
-                      <div class="col-xl-2 col-md-3 col-sm-6 d-flex align-items-stretch">
-                          <div class="card-container d-flex flex-column justify-content-between">
-                              <div class="card-body d-flex flex-column justify-content-between">
-                                  <div class="card-info ">
-                                      <!-- <h5>AED 83,500</h5> -->
-                                      <h6 style="font-weight: bold;">AED 83,500</h6>
-
-                                      <p>Net Cashflow</p>
-                                      <div class="badge bg-label-secondary rounded-pill">Last 4 Months</div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-              
-                      <!-- Insights Card -->
-                      <div class="col-xl-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                          <div class="card-container d-flex flex-column justify-content-between">
-                              <div class="card-body d-flex flex-column justify-content-between">
-                                  <div class="card-info mt-4 pt-1 scrollable-content">
-                                      <!-- <h5>Insights</h5> -->
-                                      <h6 style="font-weight: bold;">Insights</h6>
-
-                                      <p>AE611235566565656-AED Account Has High Cashflow for OCT 2021</p>
-                                      <p>AE611235564564546-AED Account Has Low Cashflow for OCT 2021</p>
-
-                                      <div class="badge bg-label-secondary rounded-pill">DEC 2021</div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
+                    </div>
                   </div>
+
+                  <!-- Cash Outflow Card -->
+                  <div
+                    class="col-xl-2 col-md-3 col-sm-6 d-flex align-items-stretch"
+                  >
+                    <div
+                      class="card-container d-flex flex-column justify-content-between"
+                    >
+                      <div
+                        class="card-body d-flex flex-column justify-content-between"
+                      >
+                        <div class="card-info">
+                          <h6 style="font-weight: bold">AED 22,500</h6>
+                          <!-- <h5>AED 22,500</h5> -->
+                          <p>Total Cash Outflow</p>
+                          <div class="badge bg-label-secondary rounded-pill">
+                            Last 4 Months
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Net Cashflow Card -->
+                  <div
+                    class="col-xl-2 col-md-3 col-sm-6 d-flex align-items-stretch"
+                  >
+                    <div
+                      class="card-container d-flex flex-column justify-content-between"
+                    >
+                      <div
+                        class="card-body d-flex flex-column justify-content-between"
+                      >
+                        <div class="card-info">
+                          <!-- <h5>AED 83,500</h5> -->
+                          <h6 style="font-weight: bold">AED 83,500</h6>
+
+                          <p>Net Cashflow</p>
+                          <div class="badge bg-label-secondary rounded-pill">
+                            Last 4 Months
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Insights Card -->
+                  <div
+                    class="col-xl-3 col-md-4 col-sm-6 d-flex align-items-stretch"
+                  >
+                    <div
+                      class="card-container d-flex flex-column justify-content-between"
+                    >
+                      <div
+                        class="card-body d-flex flex-column justify-content-between"
+                      >
+                        <div class="card-info mt-4 pt-1 scrollable-content">
+                          <!-- <h5>Insights</h5> -->
+                          <h6 style="font-weight: bold">Insights</h6>
+
+                          <p>
+                            AE611235566565656-AED Account Has High Cashflow for
+                            OCT 2021
+                          </p>
+                          <p>
+                            AE611235564564546-AED Account Has Low Cashflow for
+                            OCT 2021
+                          </p>
+
+                          <div class="badge bg-label-secondary rounded-pill">
+                            DEC 2021
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-           <div class="row">
-<!-- Forecast Period Calendar Selector -->
-<div class="col-xl-3">
-<div class="card h-70">
-<div class="card-body text-nowrap">
+            
 
-<!-- <h4 class="card-title mb-1 d-flex gap-2 flex-wrap">Forecast Period</h4> -->
-<h6 class="card-title mb-1 d-flex gap-2 flex-wrap" style="font-weight: bold;">Forecast Period</h6>
+              <div class="row" id="detail-container">
+                <!-- Forecast Period Calendar Selector -->
+                <div class="col-xl-3" id="card">
+                  <div class=" h-70">
+                    <div class="card-body text-nowrap">
+                      <!-- Forecast Period Heading -->
+                      <h6
+                        class="card-title mb-1 d-flex gap-2 flex-wrap"
+                        style="font-weight: bold"
+                      >
+                        Forecast Period
+                      </h6>
 
+                      <!-- Calendar Selector -->
+                      <div class="mb-3">
+                        <label for="forecast-calendar" class="form-label"
+                          >Select Date</label
+                        >
+                        <input
+                          type="date"
+                          id="forecast-calendar"
+                          class="form-control"
+                          (change)="onDateChange($event)"
+                        />
+                      </div>
 
-<!-- Calendar Selector -->
-<div class="mb-3">
-<label for="forecast-calendar" class="form-label">Select Date</label>
-<input type="date" id="forecast-calendar" class="form-control" />
-</div>
+                      <!-- Display Forecast Period -->
+                      <div id="forecast-period" class="mt-3">
+                        <h5>Select Period:</h5>
+                        <p>{{ forecastPeriod }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-<!-- Display Forecast Period -->
-<div id="forecast-period" class="mt-3">
-<h5>Select Period:</h5>
-<p id="forecast-period-dates"></p>
-</div>
-</div>
-</div>
-</div>
+                <!-- Donut Chart 1 -->
+                <div class="col-xl-3">
+                  <div class=" h-100" id="card">
+                    <div
+                      class="card-header d-flex align-items-center justify-content-between"
+                    >
+                      <div>
+                        <!-- <h5 class="card-title mb-0">Cash inflow distribution</h5> -->
 
-<!-- Donut Chart 1 -->
-<div class="col-xl-3">
-<div class="card h-100">
-<div class="card-header d-flex align-items-center justify-content-between">
-<div>
-<!-- <h5 class="card-title mb-0">Cash inflow distribution</h5> -->
+                        <h6 class="card-title mb-0" style="font-weight: bold">
+                          Cash inflow distribution
+                        </h6>
 
-<h6 class="card-title mb-0" style="font-weight: bold;">Cash inflow distribution</h6>
+                        <!-- <small class="text-muted">Spending on various categories</small> -->
+                      </div>
+                      <div class="dropdown d-none d-sm-flex">
+                        <button
+                          type="button"
+                          class="btn dropdown-toggle px-0"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i class="mdi mdi-calendar-month-outline"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="donutChart1"></canvas>
+                      <div id="deliveryExceptionsChart"></div>
+                    </div>
+                    <!-- <div class="card-body">
+                      <div id="deliveryExceptionsChart"></div>
+                    </div> -->
+                  </div>
+                </div>
 
-<!-- <small class="text-muted">Spending on various categories</small> -->
-</div>
-<div class="dropdown d-none d-sm-flex">
-<button type="button" class="btn dropdown-toggle px-0" data-bs-toggle="dropdown" aria-expanded="false">
-  <i class="mdi mdi-calendar-month-outline"></i>
-</button>
-<!-- <ul class="dropdown-menu dropdown-menu-end">
+                <!-- Donut Chart 2 -->
+                <div class="col-xl-3">
+                  <div class="h-100" id="card">
+                    <div
+                      class="card-header d-flex align-items-center justify-content-between"
+                    >
+                      <div>
+                        <!-- <h5 class="card-title mb-0">Cash Outflow Distribution</h5> -->
+                        <h6 class="card-title mb-0" style="font-weight: bold">
+                          Cash Outflow Distribution
+                        </h6>
+
+                        <!-- <small class="text-muted">Sales across different regions</small> -->
+                      </div>
+                      <div class="dropdown d-none d-sm-flex">
+                        <button
+                          type="button"
+                          class="btn dropdown-toggle px-0"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i class="mdi mdi-calendar-month-outline"></i>
+                        </button>
+                        <!-- <ul class="dropdown-menu dropdown-menu-end">
   <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Today</a></li>
   <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Yesterday</a></li>
   <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Last 7 Days</a></li>
@@ -175,58 +293,141 @@
   <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Current Month</a></li>
   <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Last Month</a></li>
 </ul> -->
-</div>
-</div>
-<div class="card-body">
-<canvas id="donutChart1"></canvas>
-</div>
-</div>
-</div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="donutChart2"></canvas>
+                    </div>
+                  </div>
+                </div>
 
-<!-- Donut Chart 2 -->
-<div class="col-xl-3">
-<div class="card h-100">
-<div class="card-header d-flex align-items-center justify-content-between">
-<div>
-<!-- <h5 class="card-title mb-0">Cash Outflow Distribution</h5> -->
-<h6 class="card-title mb-0" style="font-weight: bold;">Cash Outflow Distribution</h6  >
+                <!-- Quick Actions -->
+                <div class="col-xl-3">
+                  <div class=" h-100 text-center" id="quick-action">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center align-items-center"
+                    >
+                      <!-- <h5 class="card-title" style="color: #040505;">Quick Actions</h5> -->
+                      <h6
+                        class="card-title"
+                        style="font-weight: bold; margin-top: -57px"
+                      >
+                        Quick Actions
+                      </h6>
 
-<!-- <small class="text-muted">Sales across different regions</small> -->
+                      <ul
+                        class="list-unstyled"
+                        style="
+                          color: #009999;
+                          text-align: left;
+                          padding-left: 0;
+                        "
+                      >
+                        <li>
+                          <a
+                            href="#"
+                            style="color: #009999; text-decoration: underline"
+                            >Book Forward Contract</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            style="color: #009999; text-decoration: underline"
+                            >Start SIP</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            style="color: #009999; text-decoration: underline"
+                            >Book Recurring Deposits</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="account-grid" id="account-card">
+                <!-- Repeat this block for each account -->
+                <div class="account-card">
+                  <div class="account-header">
+                    <div class="account-info">
+                      <h5>Account Number: AE61123459250401192001 - INR</h5>
+                      <div class="balance-info">
+                        <p>Account Title: ABC Accounts</p>
+                        <p>
+                          Opening Balance: 128,757.00 | Closing Balance:
+                          62,474.00
+                        </p>
+                      </div>
+                    </div>
+                    <!-- <button class="view-button" onclick="toggleTable(this)"> -->
+                    <button class="view-button" (click)="toggleTable($event)">
+                      View Details
+                    </button>
+                  </div>
+                  <table class="monthly-balances" style="display: none">
+                    <thead>
+                      <tr>
+                        <th>MONTH/YEAR</th>
+                        <th><a href="view statement.html">JAN 2024</a></th>
+                        <th><a href="view statement.html">FEB 2024</a></th>
+                        <th><a href="view statement.html">MAR 2024</a></th>
+                        <th><a href="view statement.html">APR 2024</a></th>
+                        <th><a href="view statement.html">MAY 2024</a></th>
+                        <th><a href="view statement.html">JUN 2024</a></th>
+                        <th><a href="view statement.html">JUL 2024</a></th>
+                        <th><a href="view statement.html">AUG 2024</a></th>
+                        <th><a href="view statement.html">SEP 2024</a></th>
+                        <th><a href="view statement.html">OCT 2024</a></th>
+                        <th><a href="view statement.html">NOV 2024</a></th>
+                        <th><a href="view statement.html">DEC 2024</a></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>OPENING BALANCE</td>
+                        <td>128,757.00</td>
+                        <td>130,000.00</td>
+                        <td>132,000.00</td>
+                        <td>135,000.00</td>
+                        <td>138,000.00</td>
+                        <td>140,000.00</td>
+                        <td>142,500.00</td>
+                        <td>145,000.00</td>
+                        <td>147,000.00</td>
+                        <td>149,500.00</td>
+                        <td>152,000.00</td>
+                        <td>155,000.00</td>
+                      </tr>
+                      <tr>
+                        <td>CLOSING BALANCE</td>
+                        <td>62,474.00</td>
+                        <td>64,000.00</td>
+                        <td>67,000.00</td>
+                        <td>70,000.00</td>
+                        <td>72,000.00</td>
+                        <td>75,000.00</td>
+                        <td>77,500.00</td>
+                        <td>80,000.00</td>
+                        <td>82,000.00</td>
+                        <td>84,500.00</td>
+                        <td>87,000.00</td>
+                        <td>90,000.00</td>
+                      </tr>
+                      <!-- Add more rows for other balances as needed -->
+                    </tbody>
+                  </table>
+                </div>
+                <!-- Repeat block ends -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="dropdown d-none d-sm-flex">
-<button type="button" class="btn dropdown-toggle px-0" data-bs-toggle="dropdown" aria-expanded="false">
-  <i class="mdi mdi-calendar-month-outline"></i>
-</button>
-<!-- <ul class="dropdown-menu dropdown-menu-end">
-  <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Today</a></li>
-  <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Yesterday</a></li>
-  <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Last 7 Days</a></li>
-  <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Last 30 Days</a></li>
-  <li><hr class="dropdown-divider" /></li>
-  <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Current Month</a></li>
-  <li><a href="javascript:void(0);" class="dropdown-item d-flex align-items-center">Last Month</a></li>
-</ul> -->
-</div>
-</div>
-<div class="card-body">
-<canvas id="donutChart2"></canvas>
-</div>
-</div>
-</div>
-
-<!-- Quick Actions -->
-<div class="col-xl-3">
-<div class="card h-100 text-center">
-<div class="card-body d-flex flex-column justify-content-center align-items-center">
-<!-- <h5 class="card-title" style="color: #040505;">Quick Actions</h5> -->
-<h6 class="card-title" style="font-weight: bold; margin-top: -73px;">Quick Actions</h6>
-
-<ul class="list-unstyled" style="color: #009999; text-align: left; padding-left: 0;">
-<li><a href="#" style="color: #009999; text-decoration: underline;">Book Forward Contract</a></li>
-<li><a href="#" style="color: #009999; text-decoration: underline;">Start SIP</a></li>
-<li><a href="#" style="color: #009999; text-decoration: underline;">Book Recurring Deposits</a></li>
-</ul>
-</div>
-</div>
-</div>
-

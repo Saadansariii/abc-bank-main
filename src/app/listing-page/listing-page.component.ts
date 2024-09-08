@@ -32,6 +32,7 @@ export class ListingPageComponent {
   }
   search() {
     if (!this.currentStatus) {
+      alert('Please select Any One Of This Reject, Pending, or Review first')
       console.log('Please select Reject, Pending, or Review first');
       return;
     }
@@ -77,25 +78,25 @@ export class ListingPageComponent {
       if (response.code === 200 && response.data && response.data.content) {
         this.results = response.data.content;
       } else {
+        alert("Data Not Found")
         console.error('No data found or error in response:', response.message);
         this.results = [];
       }
     },
     (error) => {
-      alert("Data Not Found")
+      alert("You Select Wrong Input ")
       console.error('Error occurred during search:', error);
       this.results = [];
     }
   );
 }
-
   
+  // button
   rejectBtn(): void {
     this.rejectBtnApi();
     this.toggleColumn();
-    this.setStatus('rejected')
+    this.setStatus('rejected');
     this.search
-    // this.rejectBtnSearchApi();
   }
 
   reviewBtn(){
@@ -106,8 +107,8 @@ export class ListingPageComponent {
 
   pendingBtn(){
     this.pendingBtnApi();
-    this.pendingToggle()
-    this.setStatus('pending')
+    this.pendingToggle();
+    this.setStatus('pending');
     this.search
   }
 
@@ -205,3 +206,7 @@ private loadReviewData(): Observable<any> {
   
   
 }
+
+
+// authorize and rejecct all in only pending
+// review ticck not
