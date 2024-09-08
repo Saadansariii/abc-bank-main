@@ -11,27 +11,54 @@ import { rejectSearch } from 'src/app/utils/api'
 })
 export class ListingPageComponent {
   showAdditionalColumns: boolean = false;
+  tickBox : boolean = false
   // selectedOption: string = '0';
   searchValue: string = '';
   results: any[] = [];
-  selectedValue: string = '0';
+  // selectedValue: string = '0';
   data: any[] = [];
-  filteredData: any[] = [];
+  // filteredData: any[] = [];
+  // review : any [] = []
 
 
   ngOnInit(): void {
-    this.fetchData();
+    // this.fetchData();
   }
   //
   handleButtonClick(): void {
     this.rejectBtnApi();
     this.toggleColumn();
-    this.rejectBtnSearchApi();
+    // this.rejectBtnSearchApi();
   }
+
+  review(){
+    this.reviewBtnApi();
+    this.reviewToggle()
+  }
+
+  pending(){
+    this.pendingBtnApi();
+    this.pendingToggle()
+  }
+
+
   toggleColumn() {
-    this.showAdditionalColumns = !this.showAdditionalColumns;
+    this.showAdditionalColumns = true;
+    this.tickBox = false
     console.log('Flag value:', this.showAdditionalColumns);
   }
+
+  reviewToggle(){
+    this.showAdditionalColumns = false;
+    this.tickBox = false
+  }
+
+  pendingToggle(){
+    this.showAdditionalColumns = false;
+    this.tickBox = true
+  }
+
+
   options = [
     { value: '0', label: 'Reference No' },
     { value: '1', label: 'Corporate Code' },
@@ -40,65 +67,6 @@ export class ListingPageComponent {
     { value: '4', label: 'Entry Type' },
   ];
   constructor(private http: HttpClient) {}
-  //  reject button function
-
-  private rejectBtnUrl = 'http://122.170.5.148:8080/api/rejected?page=0&size=2';
-  rejectBtnApi(): void {
-    this.loadRejectData().subscribe(
-      (response) => {
-        console.log('API Response:', response); // Debug statement
-        this.results = response.data.content || []; // Ensure data structure is correct
-      },
-      (error) => {
-        console.error('Search request failed', error);
-      }
-    );
-  }
-  private loadRejectData(): Observable<any> {
-    return this.http.get<any>(this.rejectBtnUrl).pipe(
-      catchError((error) => {
-        console.error('Search request failed', error);
-        return of({ data: [] }); // Return an empty result on error
-      })
-    );
-  }
-  // reject search api
-  // private rejectSearch = 'http://122.170.5.148:8080/api/rejected/search'
-  rejectBtnSearchApi(): void {}
-  fetchData(): void {
-    this.http
-      .get<any[]>('http://122.170.5.148:8080/api/rejected/search')
-      .subscribe(
-        (response) => {
-          this.data = response;
-          this.filterData();
-        },
-        (error) => console.error('Error fetching data:', error)
-      );
-  }
-  onSelectionChange(event: any): void {
-    this.selectedValue = event.target.value;
-    this.filterData();
-  }
-  filterData(): void {
-    this.filteredData = this.data.filter((item) => {
-      switch (this.selectedValue) {
-        case '0':
-          return item.referenceNo;
-        case '1':
-          return item.corporateCode;
-        case '2':
-          return item.corporateName;
-        case '3':
-          return item.forecastingAs;
-        case '4':
-          return item.entryType;
-        default:
-          return true;
-      }
-    });
-  }
-
 
   search(){
     if(this.showAdditionalColumns === true){ 
@@ -110,10 +78,12 @@ export class ListingPageComponent {
 
   }
 
-  // pending button function
-  private pendingBtnUrl = 'http://122.170.5.148:8080/api/pending-list?page=0&size=92';
-  pendingBtnApi(): void {
-    this.loadPendingData().subscribe(
+private pendingBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/pending-list';
+private reviewBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/review-list';
+private rejectBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/rejected?page=0&size=2';
+
+  rejectBtnApi(): void {
+    this.loadRejectData().subscribe(
       (response) => {
         console.log('API Response:', response); // Debug statement
         this.results = response.data.content || []; // Ensure data structure is correct
@@ -123,20 +93,63 @@ export class ListingPageComponent {
       }
     );
   }
-  private loadPendingData(): Observable<any> {
-    return this.http.get<any>(this.pendingBtnUrl).pipe(
+
+  private loadRejectData(): Observable<any> {
+    return this.http.get<any>(this.rejectBtnUrl).pipe(
       catchError((error) => {
         console.error('Search request failed', error);
         return of({ data: [] }); // Return an empty result on error
       })
     );
-     
   }
+
+  pendingBtnApi(): void {
+  this.loadPendingData().subscribe(
+    (response) => {
+      console.log('API Response:', response); // Debug statement
+      this.results = response.data.content || []; // Ensure data structure is correct
+    },
+    (error) => {
+      console.error('Search request failed', error);
+    }
+  );
+}
+
+reviewBtnApi(): void {
+  this.loadReviewData().subscribe(
+    (response) => {
+      console.log('Review API Response:', response); // Debug statement
+      this.results = response.data.content || []; // Ensure data structure is correct
+    },
+    (error) => {
+      console.error('Review request failed', error);
+    }
+  );
+}
+
+private loadPendingData(): Observable<any> {
+  return this.http.get<any>(this.pendingBtnUrl).pipe(
+    catchError((error) => {
+      console.error('Pending request failed', error);
+      return of({ data: [] }); // Return an empty result on error
+    })
+  );
+}
+
+private loadReviewData(): Observable<any> {
+  return this.http.get<any>(this.reviewBtnUrl).pipe(
+    catchError((error) => {
+      console.error('Review request failed', error);
+      return of({ data: [] }); // Return an empty result on error
+    })
+  );
+}
+
+
 
   // const url = rejectSearch ;
 
-  // search(){
-
-  // }
+  
+  
   
 }
