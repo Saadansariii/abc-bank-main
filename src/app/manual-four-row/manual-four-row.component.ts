@@ -16,7 +16,7 @@ export class ManualFourRowComponent implements OnInit, AfterViewInit {
 
   forecastForm!: FormGroup;
 
-  private apiUrl = 'http://192.168.63.1:8080/api/forecasts';
+  private apiUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/forecasts';
 
   corporateCode: string = '';
   corporateName: string = '';
@@ -42,9 +42,9 @@ export class ManualFourRowComponent implements OnInit, AfterViewInit {
   filteredUsers: any[] = [];
   searchTerm: string = '';
   searchBy: string = 'corporateCode';
-  apiAllUrl = 'http://122.170.5.148:8080/api/corporate/all';
-  apiSearchByCodeUrl = 'http://122.170.5.148:8080/api/corporate/corporate-code';
-  apiSearchByNameUrl = 'http://122.170.5.148:8080/api/corporate/corporate-name';
+  apiAllUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/corporate/all';
+  apiSearchByCodeUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/corporate/corporate-code';
+  apiSearchByNameUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/corporate/corporate-name';
   accountOptions = {
     internalAccount: [
       { value: 'internalAcc001', text: 'Internal Acc 001' },
@@ -335,7 +335,7 @@ openPopup(){
 
   submitForm(): void {
     console.log("hello sir " ,this.formData);
-    this.http.post('http://122.170.5.148:8080/api/forecasts', this.formData).pipe(
+    this.http.post('http://167.172.220.75:8084/CashflowForecastingApplication/api/forecasts', this.formData).pipe(
       catchError((error) => {
         console.error('Error occurred while saving the forecast:', error);
         return throwError(error);
@@ -357,7 +357,7 @@ openPopup(){
     } else if (encodedType === "externalAccount") {
       encodedType = "External Account";
     }
-    const url = `http://122.170.5.148:8080/api/accounts/by-type?accountType=${encodeURIComponent(encodedType)}&corporateId=${corporateId}`;
+    const url = `http://167.172.220.75:8084/CashflowForecastingApplication/api/accounts/by-type?accountType=${encodeURIComponent(encodedType)}&corporateId=${corporateId}`;
     console.log('Fetching account numbers with URL:', url); // Log the request URL for debugging
     this.http.get<any>(url).pipe(
       catchError((error: any) => {

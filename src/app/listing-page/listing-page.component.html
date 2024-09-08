@@ -35,15 +35,15 @@
                   <span class="tf-icons mdi mdi-plus-box-outline me-1"></span
                   >Initiate
                 </button>
-                <button class="btn btn-secondary" (click)="review()">
+                <button class="btn btn-secondary" (click)="reviewBtn()">
                   Review
                 </button>
-                <button class="btn btn-warning" (click)="pending()">
+                <button class="btn btn-warning" (click)="pendingBtn()">
                   Pending
                 </button>
                 <button
                 class="btn btn-danger waves-effect waves-light"
-                (click)="handleButtonClick()"
+                (click)="rejectBtn()"
               >
               <!-- {{ showAdditionalColumns }} -->
                 Rejected
@@ -56,17 +56,15 @@
             <div class="row mb-3" >
               <div class="col-md-6">
                 <div class="input-group">
-                  <select class="form-select" aria-label="Search By">
-                    <option selected>Reference No</option>
-                    <option value="1">Corporate Code</option>
-                    <option value="2">Corporate Name</option>
-                    <option value="3">Forecasting As</option>
-                    <option value="4">Entry Type</option>
-                    <!-- Add other search options as needed -->
+                  <select [(ngModel)]="selectedOption" (ngModelChange)="onOptionChange()" class="form-select" aria-label="Search By">
+                    <option [value]="0">Reference No</option>
+                    <option [value]="1">Corporate Code</option>
+                    <option [value]="2">Corporate Name</option>
+                    <option [value]="3">Forecasting As</option>
+                    <option [value]="4">Entry Type</option>
                   </select>
-                  <input type="text" class="search-value" placeholder="Enter Search Value"
-                    aria-label="Search Value">
-                  <button class="btn btn-primary" (click)="search()"  type="button">
+                  <input type="text" [(ngModel)]="searchValue" class="search-value" placeholder="Enter Search Value" aria-label="Search Value" />
+                  <button class="btn btn-primary" (click)="search()" type="button">
                     <i class="mdi mdi-magnify"></i> Search
                   </button>
                 </div>

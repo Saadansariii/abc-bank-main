@@ -3,6 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { rejectSearch } from 'src/app/utils/api'
+import { response } from 'express';
 
 @Component({
   selector: 'app-listing-page',
@@ -10,35 +11,104 @@ import { rejectSearch } from 'src/app/utils/api'
   styleUrls: ['./listing-page.component.css'],
 })
 export class ListingPageComponent {
-  showAdditionalColumns: boolean = false;
+  showAdditionalColumns: boolean   = false;
   tickBox : boolean = false
-  // selectedOption: string = '0';
-  searchValue: string = '';
+  // searchValue: string = '';
   results: any[] = [];
-  // selectedValue: string = '0';
   data: any[] = [];
-  // filteredData: any[] = [];
-  // review : any [] = []
+  selectedOption: number = 0;
+  searchValue: string = '';
+  currentStatus: 'rejected' | 'pending' | 'review' | null = null;
 
+  // new rejectsearch
 
-  ngOnInit(): void {
-    // this.fetchData();
+  onOptionChange() {
+    console.log('Selected option:', this.selectedOption);
   }
-  //
-  handleButtonClick(): void {
+
+  setStatus(status: 'rejected' | 'pending' | 'review') {
+    this.currentStatus = status;
+    console.log(`Status set to: ${status}`);
+  }
+  search() {
+    if (!this.currentStatus) {
+      console.log('Please select Reject, Pending, or Review first');
+      return;
+    }
+  
+    if (!this.searchValue) {
+      console.log('Please enter a search value');
+      return;
+    }
+
+    let searchParam: string;
+    switch (this.selectedOption) {
+      case 0: searchParam = 'referenceNo'; break;
+      case 1: searchParam = 'corporateCode'; break;
+      case 2: searchParam = 'corporateName'; break;
+      case 3: searchParam = 'forecastingAs'; break;
+      case 4: searchParam = 'entryType'; break;
+      default: searchParam = 'corporateCode';
+    }
+
+    let apiUrl: string;
+    const baseUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api';
+    
+    switch (this.currentStatus) {
+      case 'rejected':
+        apiUrl = `${baseUrl}/rejected/search`;
+        break;
+      case 'pending':
+        apiUrl = `${baseUrl}/pending-list/search`;
+        break;
+      case 'review':
+        apiUrl = `${baseUrl}/review-list/search`;
+        break;
+      default:
+        console.log('Invalid status');
+        return;
+    }
+
+    const params = { [searchParam]: this.searchValue };
+
+  this.http.get(apiUrl, { params: params }).subscribe(
+    (response: any) => {
+      console.log('Search results:', response);
+      if (response.code === 200 && response.data && response.data.content) {
+        this.results = response.data.content;
+      } else {
+        console.error('No data found or error in response:', response.message);
+        this.results = [];
+      }
+    },
+    (error) => {
+      alert("Data Not Found")
+      console.error('Error occurred during search:', error);
+      this.results = [];
+    }
+  );
+}
+
+  
+  rejectBtn(): void {
     this.rejectBtnApi();
     this.toggleColumn();
+    this.setStatus('rejected')
+    this.search
     // this.rejectBtnSearchApi();
   }
 
-  review(){
+  reviewBtn(){
     this.reviewBtnApi();
-    this.reviewToggle()
+    this.setStatus('review')
+    this.search
   }
 
-  pending(){
+  pendingBtn(){
     this.pendingBtnApi();
     this.pendingToggle()
+    this.setStatus('pending')
+    this.search
   }
 
 
@@ -58,25 +128,7 @@ export class ListingPageComponent {
     this.tickBox = true
   }
 
-
-  options = [
-    { value: '0', label: 'Reference No' },
-    { value: '1', label: 'Corporate Code' },
-    { value: '2', label: 'Corporate Name' },
-    { value: '3', label: 'Forecasting As' },
-    { value: '4', label: 'Entry Type' },
-  ];
   constructor(private http: HttpClient) {}
-
-  search(){
-    if(this.showAdditionalColumns === true){ 
-     this.rejectBtnApi();
-    }
-    else{
-     this.pendingBtnApi();
-    }
-
-  }
 
 private pendingBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/pending-list';
 private reviewBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/review-list';
@@ -147,7 +199,7 @@ private loadReviewData(): Observable<any> {
 
 
 
-  // const url = rejectSearch ;
+  
 
   
   
