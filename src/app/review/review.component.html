@@ -1,100 +1,103 @@
 <div class="container-xxl flex-grow-1 container-p-y">
-    <!-- <div class="app-ecommerce">  -->
-    <div class="row">
-      <!-- Basic Layout -->
-      <!-- <div class="col-xxl"> -->
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <div>
-              <ol class="breadcrumb custom-breadcrumb">
-                <li class="breadcrumb-item"><a href="#">BankCashPro</a></li>
-                <li class="breadcrumb-item"><a href="#">Cashflow Forecasting</a></li>
-                <li class="breadcrumb-item"><a href="#">Transaction</a></li>
-                <li class="breadcrumb-item"><a href="#">Listing Page</a></li>
-                <li class="breadcrumb-item active bold-f-b" aria-current="page"><a
-                    href="javascript:void(0)">View</a></li>
-              </ol>
-            </div>
-            <div class="button-group" style="margin-top: -12px;">
-              <button type="button" class="btn btn-primary waves-effect waves-light">
-                <span class="tf-icons mdi mdi-plus-box-outline me-1"></span>Initiate
-              </button>
-              <!-- <button class="btn btn-secondary" onclick="window.location.href='Review-List.html';"> -->
-              <button class="btn btn-secondary" onclick="window.location.href='#';">
-                Review
-              </button>
-              <button class="btn btn-warning">Pending</button>
-              <!-- <button class="btn btn-secondary" onclick="window.location.href='rejected_list.html';"> -->
-              <button class="btn btn-danger waves-effect waves-light" onclick="window.location.href='#';">
-                Rejected
-              </button>
-            </div>
+  <!-- <div class="app-ecommerce">  -->
+  <div class="row">
+    <!-- Basic Layout -->
+    <!-- <div class="col-xxl"> -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <ol class="breadcrumb custom-breadcrumb">
+              <li class="breadcrumb-item"><a href="#">BankCashPro</a></li>
+              <li class="breadcrumb-item">
+                <a href="#">Cashflow Forecasting</a>
+              </li>
+              <li class="breadcrumb-item"><a href="#">Transaction</a></li>
+              <li class="breadcrumb-item"><a href="#">Listing Page</a></li>
+              <li class="breadcrumb-item active bold-f-b" aria-current="page">
+                <a href="javascript:void(0)">View</a>
+              </li>
+            </ol>
           </div>
-          <!-- <h4 class="card-title">Manual Forecast Details</h4> -->
-
-          <h2>Corporate Client - View</h2>
-          <div class="details-header">1.1 Manual Forecasting Details</div>
-          <div class="details-table" style="margin-bottom: 22px;">
-           <!-- First Row -->
-<div class="row justify-content-end">
-<div class="col-md-3 col-sm-6">
-<strong>Corporate Code</strong>
-<p>C101</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Corporate Name</strong>
-<p>Galaxy Toyota</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Narration</strong>
-<p>Finance Repayment</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Lock Record in Cash Flow</strong>
-<p>Yes</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Forecasting As</strong>
-<p>Inward Payment</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Entry Type</strong>
-<p>Onetime</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Account Number</strong>
-<p>657983231 - INR</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Description</strong>
-<p>-</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Mode</strong>
-<p>Account Deposit</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Account Type</strong>
-<p>Internal Account</p>
-</div>
-<div class="col-md-3 col-sm-6">
-<strong>Forecasted Amount</strong>
-<p>INR 20000</p>
-</div>
-</div>
-
-            <div class="button-container">
-              <!-- Submit Button -->
-              <button type="button" class="btn btn-secondary mt-3">Cancel</button>
-              <button type="submit" class="btn btn-primary mt-3">Back</button>
+          <div class="button-group" style="margin-top: -12px">
+            <button              type="button"
+              class="btn btn-primary waves-effect waves-light"
+            >
+              <span class="tf-icons mdi mdi-plus-box-outline me-1"></span
+              ><a class="a b" href="/listing-page">Initiate
+              </a></button>
+            <!-- <button class="btn btn-secondary" onclick="window.location.href='Review-List.html';"> -->
+            <button
+              class="btn btn-secondary"
+            ><a class="a c" href="/listing-page" >
+              Review
+            </a></button>
+            <button class="btn btn-warning"><a class="a" href="/listing-page">Pending</a></button>
+            <!-- <button class="btn btn-secondary" onclick="window.location.href='rejected_list.html';"> -->
+            <button
+              class="btn btn-danger waves-effect waves-light"            ><a class="a d" href="/listing-page">
+              Rejected</a>
+            </button>
+          </div>
+        </div>
+        <!-- <h4 class="card-title">Manual Forecast Details</h4> -->        <h2>Corporate Client - View</h2>
+        <div class="details-header">1.1 Manual Forecasting Details</div>
+        <div class="details-table" style="margin-bottom: 22px">
+          <!-- First Row -->
+          <div class="row justify-content-end">
+            <div class="col-md-3 col-sm-6" *ngIf="singleData">
+              <div>
+                <strong>Corporate Code</strong>
+                <p>{{ singleData.corporateCode }}</p>
+              </div>
+              <div>
+                <strong>Corporate Name</strong>
+                <p>{{ singleData.corporateName }}</p>
+              </div>
+              <div>
+                <strong>Narration</strong>
+                <p>{{ singleData.description || 'Finance Repayment' }}</p>
+              </div>
+              <div>
+                <strong>Lock Record in Cash Flow</strong>
+                <p>Yes</p>
+              </div>
+              <div>
+                <strong>Forecasting As</strong>
+                <p>{{ singleData.forecastingAs }}</p>
+              </div>
+              <div>
+                <strong>Entry Type</strong>
+                <p>{{ singleData.entryType }}</p>
+              </div>
+              <div>
+                <strong>Account Number</strong>
+                <p>{{ singleData.accountNumber }} - {{ singleData.currency }}</p>
+              </div>
+              <div>
+                <strong>Description</strong>
+                <p>{{ singleData.description || '-' }}</p>
+              </div>
+              <div>
+                <strong>Mode</strong>
+                <p>Account Deposit</p>
+              </div>
+              <div>
+                <strong>Account Type</strong>
+                <p>Internal Account</p>
+              </div>
+              <div>
+                <strong>Forecasted Amount</strong>
+                <p>{{ singleData.forecastedAmount }}</p>
+              </div>
             </div>
-            
-
-              
-            </div>
-       
+          </div>          <div class="button-container">
+            <!-- Submit Button -->
+            <button type="button" class="btn btn-secondary mt-3"><a class="a" href="/review">Cancel </a></button>
+            <button type="submit" class="btn btn-primary mt-3">  <a class="a" href="/manual-four">Back</a></button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>

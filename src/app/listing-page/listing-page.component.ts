@@ -133,7 +133,7 @@ export class ListingPageComponent {
 
 private pendingBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/pending-list';
 private reviewBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/review-list';
-private rejectBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/rejected?page=0&size=2';
+private rejectBtnUrl = 'http://167.172.220.75:8084/CashflowForecastingApplication/api/rejected';
 
   rejectBtnApi(): void {
     this.loadRejectData().subscribe(

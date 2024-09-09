@@ -13,6 +13,7 @@ import { RejectedPageComponent } from './rejected-page/rejected-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 // import { ManualForecastComponent } from './listing-page/manual-forecast.component';
 import { ListingPageComponent } from './listing-page/listing-page.component';
+import { ReviewComponent } from './review/review.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { ListingPageComponent } from './listing-page/listing-page.component';
       // ManualThreeRowComponent,
       RejectedPageComponent,
       ListingPageComponent,
+      ReviewComponent
       
       
     ],
@@ -32,7 +34,9 @@ import { ListingPageComponent } from './listing-page/listing-page.component';
       AppRoutingModule,
       FormsModule,
       HttpClientModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      // ReviewComponent
+
     ],
     providers: [],
     bootstrap: [AppComponent]

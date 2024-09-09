@@ -7,6 +7,7 @@ import { ManualFourRowComponent } from './manual-four-row/manual-four-row.compon
 import { ManualThreeRowComponent } from './manual-three-row/manual-three-row.component';
 import { RejectedPageComponent } from './rejected-page/rejected-page.component';
 import { ListingPageComponent } from './listing-page/listing-page.component';
+import { ReviewComponent } from './review/review.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route to HomeComponent
@@ -15,8 +16,10 @@ const routes: Routes = [
   { path: 'manual-four', component: ManualFourRowComponent }, // Route for ManualFourRowComponent
   { path: 'manual-three', component: ManualThreeRowComponent }, // Route for ManualThreeRowComponent
   { path: 'rejected-list', component: RejectedPageComponent },
-  { path: '', redirectTo: '/manual-forecast', pathMatch: 'full' },
-  {path : 'listing-page' , component : ListingPageComponent}
+  // { path: '', redirectTo: '/manual-forecast', pathMatch: 'full' },
+  {path : 'listing-page' , component : ListingPageComponent},
+  {path : 'review' , component : ReviewComponent}
+
 ];
 
 @NgModule({
