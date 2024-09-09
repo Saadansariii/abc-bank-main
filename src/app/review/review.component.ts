@@ -13,7 +13,7 @@ export class ReviewComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
+  ngOnInit(){
     this.getSelectedData();
   }
 

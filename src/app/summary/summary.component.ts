@@ -1,15 +1,20 @@
-import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { Chart } from 'chart.js/auto';
+import { Component, AfterViewInit, ChangeDetectorRef, OnInit } from '@angular/core';
+import { Chart } from 'chart.js/auto'; 
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-summary',
   templateUrl: './summary.component.html',
   styleUrls: ['./summary.component.css'],
 })
-export class SummaryComponent implements AfterViewInit {
+export class SummaryComponent implements OnInit , AfterViewInit {
+
   forecastPeriod: string = '';
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef,
+    private http : HttpClient
+
+  ) {}
 
   onDateChange(event: Event) {
     const inputElement = event.target as HTMLInputElement;
@@ -111,4 +116,18 @@ export class SummaryComponent implements AfterViewInit {
       }
     }
   }
+
+  ngOnInit(): void {
+    
+  }
+
+  balanceData : any [] = [] ;
+
+  viewBalance(){
+    this.http.get('http://167.172.220.75:8084/CashflowForecastingApplication/api/transactions').subscribe((res : any)=> {
+      this.balanceData = res.data.content
+    })
+  }
+
+  
 }

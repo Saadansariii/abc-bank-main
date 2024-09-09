@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    margin: 0;
+  }
+  
+  .summary-button {
+    background-color: #009999;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .info-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #eef5f9;
+    border-radius: 8px;
+  }
+  
+  .info-item p {
+    margin: 5px 0;
+  }
+  
+  .action-icons {
+    margin-bottom: 20px;
+  }
+  
+  .action-icons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px; /* Adjust icon size */
+    margin-right: 15px;
+    transition: color 0.3s;
+  }
+  
+  .action-icons .favorite-button {
+    color: #009999;
+  }
+  
+  .action-icons .favorite-button:hover {
+    color: #ff9900;
+  }
+  
+  .action-icons .download-button {
+    color: #666cff;
+  }
+  
+  .action-icons .download-button:hover {
+    color: #4a4a9e;
+  }
+  
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .transaction-table th,
+  .transaction-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .transaction-table th {
+    background-color: #f9fafb;
+  }
+  
+  .transaction-table tr.highlight {
+    background-color: #ffeded;
+  }
+  
+  .remove-transaction {
+    margin-top: 20px;
+  }
+  
+  .remove-transaction table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .remove-transaction th,
+  .remove-transaction td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .remove-transaction .undo-button,
+  .back-button {
+    background-color: #009999;
+    color: #eee7e7;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .back-button {
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .info-box {
+      flex-direction: column;
+    }
+  
+    .transaction-table th,
+    .transaction-table td,
+    .remove-transaction th,
+    .remove-transaction td {
+      font-size: 12px;
+    }
+  }

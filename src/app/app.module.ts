@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 // import { ManualForecastComponent } from './listing-page/manual-forecast.component';
 import { ListingPageComponent } from './listing-page/listing-page.component';
 import { ReviewComponent } from './review/review.component';
+import { SummaryViewComponent } from './summary-view/summary-view.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { ReviewComponent } from './review/review.component';
       // ManualThreeRowComponent,
       RejectedPageComponent,
       ListingPageComponent,
-      ReviewComponent
+      ReviewComponent,
+      SummaryViewComponent
       
       
     ],

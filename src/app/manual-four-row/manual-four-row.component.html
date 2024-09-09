@@ -218,7 +218,7 @@
                     <option value="" selected>Please Select</option>
                     <option
                       *ngFor="let account of accountTypes"
-                      [value]="account.value"
+                      [value]="account.accountNumber"
                     >
                       {{ account.accountNumber }}
                     </option>
@@ -325,7 +325,7 @@
                 style="display: none"
               >
                 <div class="mb-3">
-                  <label for="recurringPattern" class="form-label"
+                  <label for="recurringPattern" class="form-label" 
                     >Recurring Pattern*</label
                   >
                   <select
@@ -334,7 +334,7 @@
                     name="recurringPattern"
                     [(ngModel)]="formData.recurringPattern"
                   >
-                    <option selected>Please Select</option>
+                    <option selected value="">Please Select</option>
                     <option>Daily</option>
                     <option>Weekly</option>
                     <option>Monthly</option>
